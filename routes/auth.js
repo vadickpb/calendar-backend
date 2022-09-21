@@ -12,7 +12,7 @@ const validarCampos = require('../middleware/validar-campos');
 router.post(
   '/',
   [//middlewares
-    check('name', 'el campo nombre obligatorio').not().isEmpty(),
+    check('email', 'debe ingressar un email correcto').isEmail(),
     check('password', 'el campo password debe ser de más de 5 caracteres').isLength({ min: 6 }),
     validarCampos
   ],
